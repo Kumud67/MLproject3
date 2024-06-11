@@ -1,15 +1,16 @@
 import sys
-
+from src.logger import logging
 
 ## created a function that show how mesage should look like in the file
 def error_message_detail(error,error_detail:sys):
     _,_,exc_tb=error_detail.exc_info()
     file_name=exc_tb.tb_frame.f_code.co_filename
     error_message="Error occured in python script name [{0}] line number [{1}] error message[{2}]".format(
-    file_name,exc_tb.tb.lineno,str(error)
-
+        file_name,exc_tb.tb.lineno,str(error))
     return error_message
-    )
+
+
+    
 
 
 ## created customException inheriting from exception
